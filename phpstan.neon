@@ -1,0 +1,17 @@
+includes:
+    - ./vendor/nunomaduro/larastan/extension.neon
+parameters:
+	level: max
+	paths:
+		- app
+	reportUnmatchedIgnoredErrors: false
+	checkMissingIterableValueType: false
+	checkGenericClassInNonGenericObjectType: false
+	ignoreErrors:
+		- '#Call to an undefined method Mockery\\ExpectationInterface#'
+		- '#Mockery\\(?:Legacy)?MockInterface#'
+		- '/expects stdClass, object given/'
+		- '/Cannot access offset [0-1]+ on (.*)callable/'
+		- '/PHPDoc tag @throws with type Interop\\Container\\Exception\\ContainerException is not subtype of Throwable/'
+		- '/PHPDoc tag @throws with type Psr\Container\ContainerExceptionInterface|ReflectionException is not subtype of Throwable/'
+		- '/Method (.*)Command::configure\(\) has no return typehint specified/'
